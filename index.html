@@ -25,24 +25,37 @@
         const para = document.querySelector('p');
 
         // function squared(num)
+        // numの2乗をsquaredに代入
         let squared = num => num * num;
 
         // function cubed(num)
+        // numの3乗をcubedに代入
         let cubed = num => num * num * num;
 
+        // factoria関数を定義
         function factorial(num) {
+            // numより0が大きい場合はundefinedを返す
             if (num < 0) return undefined;
+            // numより0が小さい場合は1を返す
             if (num == 0) return 1;
+            // num-1をxに代入
             let x = num - 1;
+            // xが1より大きい場合
             while (x > 1) {
+                // ?
                 num *= x;
+                // ?
                 x--;
             }
+            // numの値を返す
             return num;
         }
 
+        // 
         input.onchange = function () {
+            // numにinputに入力された値を代入
             const num = input.value;
+            
             if (isNaN(num)) {
                 para.textContent = 'You need to enter a number!';
             } else {
